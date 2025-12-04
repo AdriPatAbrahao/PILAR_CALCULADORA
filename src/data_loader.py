@@ -19,7 +19,7 @@ def load_dataset() -> pd.DataFrame:
         df = pd.read_csv(
             DATA_PATH,
             sep=';',           
-            decimal='.',       
+            decimal=',',       
             skiprows=1,
             encoding='latin-1' 
         )

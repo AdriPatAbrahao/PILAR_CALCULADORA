@@ -24,6 +24,7 @@ def example_single_prediction():
         'PeDireito': 235, 
         'largura': 30, 
         'Altura': 95,
+        'Cobrimento': 2.5,
         'N_top': 392,   'Mx_top': 129,   'My_top': -92,
         'N_base': 392,  'Mx_base': 205, 'My_base': 430,
         'As': 20.1 # Valor alvo real
@@ -58,12 +59,12 @@ def example_batch_test():
     predictor = PillarPredictor()
     pillars = [
         # 1. O Pilar Real (deve passar)
-        {'fck': 50, 'PeDireito': 235, 'largura': 30, 'Altura': 95,
+        {'fck': 50, 'PeDireito': 235, 'largura': 30, 'Altura': 95, 'Cobrimento': 2.5,   
          'N_top': 392, 'Mx_top': 129, 'My_top': -92,
          'N_base': 392, 'Mx_base': 205, 'My_base': 430, 'As': 20.1},
          
         # 2. Pilar Hipotético: Mesma geometria, mas CARGA EXTREMA (deve falhar)
-        {'fck': 50, 'PeDireito': 200, 'largura': 45, 'Altura': 15,
+        {'fck': 50, 'PeDireito': 200, 'largura': 45, 'Altura': 15, 'Cobrimento': 2.5,
          'N_top': 5000, 'Mx_top': 300, 'My_top': 200, 
          'N_base': 5000, 'Mx_base': 300, 'My_base': 200, 'As': 0}
     ]
@@ -90,7 +91,7 @@ def example_compare_variations():
     
     # Cargas do Pilar Real
     base_loads = {
-        'fck': 30,
+        'fck': 30, 'Cobrimento': 3.0,
         'N_top': 500, 'Mx_top': 10, 'My_top': 80, 
         'N_base': 500, 'Mx_base': 10, 'My_base': 80,
     }
